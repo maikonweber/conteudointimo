@@ -1,8 +1,10 @@
 import { Inter as FontSans } from "next/font/google"
 import '@radix-ui/themes/styles.css';
 import "./globals.css";
-
+import { Theme } from '@radix-ui/themes';
+import  { Header }  from '../component/Header'
 import { cn } from "@/lib/utils"
+
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
@@ -21,8 +23,11 @@ export default function RootLayout({ children }) {
           "min-h-screen bg-background font-sans antialiased",
           fontSans.variable
         )}
-      >  
+        >  
+        <Theme>
+        <Header />       
         {children}
+        </Theme>
         
       </body>
     </html>

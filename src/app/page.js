@@ -1,11 +1,28 @@
-import Image from "next/image";
-import { Header } from "../component/Header"
+import * as Form from '@radix-ui/react-form';
 export default function Home() {
   return (
     <>
-    <Header />
-    <main className="flex min-h-screen flex-col items-center justify-between bg-red-200 p-24">
-     Home
+    <main className="flex 
+    min-h-screen 
+    flex-col
+    items-center 
+    justify-between bg-pink-100 p-24">
+      <Form.Root className="FormRoot">
+        <Form.Field className="FormField" name="email">
+        <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between' }}>
+          <Form.Label className="FormLabel">Email</Form.Label>
+          <Form.Message className="FormMessage" match="valueMissing">
+            Please enter your email
+          </Form.Message>
+          <Form.Message className="FormMessage" match="typeMismatch">
+          Please provide a valid email
+          </Form.Message>
+        </div>
+      <Form.Control asChild>
+        <input className="Input" type="email" required />
+      </Form.Control>
+        </Form.Field>
+      </Form.Root>
     </main>
     </>  
  );
