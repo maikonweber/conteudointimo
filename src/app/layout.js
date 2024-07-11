@@ -1,5 +1,5 @@
 import { Inter as FontSans } from "next/font/google"
-
+import '@radix-ui/themes/styles.css';
 import "./globals.css";
 
 import { cn } from "@/lib/utils"
